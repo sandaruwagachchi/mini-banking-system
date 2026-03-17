@@ -9,6 +9,10 @@ public class CurrentAccount extends Account
 
     @Override
     public void deposit(double amount) {
+        if(amount <= 0){
+            System.out.println("Invalid deposit amount.");
+            return;
+        }
         balance += amount;
         System.out.println("Deposited: " + amount);
     }
@@ -16,8 +20,10 @@ public class CurrentAccount extends Account
     @Override
     public void withdraw(double amount) throws InsufficientFundsException
     {
-     if (amount > balance) {
-           throw new InsufficientFundsException("Insufficient funds for withdrawal.");
+        double overdraftLimit = 1000;
+
+     if (balance-amount < -overdraftLimit) {
+           throw new InsufficientFundsException("Overdraft limit exceeded.");
        }
         balance -= amount;
         System.out.println("Withdrew: " + amount);
