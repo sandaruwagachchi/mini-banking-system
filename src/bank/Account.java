@@ -2,8 +2,8 @@ package bank;
 
 public abstract class Account
 {
-    private String accNumber;
-    private double balance;
+    protected String accNumber;
+    protected double balance;
 
     public Account(String accNumber, double balance) {
         this.accNumber = accNumber;
