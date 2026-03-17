@@ -10,10 +10,8 @@ public abstract class Account
         this.balance = balance;
     }
 
-    public void deposit(double amount) {
-        balance += amount;
-        System.out.println("Deposited: " + amount);
-    }
+    public abstract void deposit(double amount);
+
     public abstract void withdraw(double amount) throws InsufficientFundsException;
 
     public double getBalance() {

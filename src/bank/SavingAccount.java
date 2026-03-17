@@ -8,6 +8,12 @@ public class SavingAccount extends Account
     }
 
     @Override
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    @Override
     public void withdraw(double amount) throws InsufficientFundsException
     {
       if (amount > balance) {
