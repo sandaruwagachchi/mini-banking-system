@@ -8,16 +8,6 @@ public class SavingAccount extends Account
     }
 
     @Override
-    public void deposit(double amount) {
-        if(amount <= 0){
-            System.out.println("Invalid deposit amount.");
-            return;
-        }
-        balance += amount;
-        System.out.println("Deposited: " + amount);
-    }
-
-    @Override
     public void withdraw(double amount) throws InsufficientFundsException
     {
         double minimumBalance = 500;

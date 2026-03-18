@@ -10,7 +10,14 @@ public abstract class Account
         this.balance = balance;
     }
 
-    public abstract void deposit(double amount);
+    public void deposit(double amount) {
+        if(amount <= 0){
+            System.out.println("Invalid deposit amount.");
+            return;
+        }
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
 
     public abstract void withdraw(double amount) throws InsufficientFundsException;
 
